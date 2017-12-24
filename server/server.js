@@ -1,3 +1,11 @@
+var env = process.env.NODE_ENV || 'develoment';
+
+// if(env === 'develoment') {
+//     process.env.PORT = 3000;
+// } else if(env === 'test') {
+//     process.env.PORT = 3000;
+// }
+
 const _= require('lodash');
 var {ObjectID} = require('mongodb');
 
