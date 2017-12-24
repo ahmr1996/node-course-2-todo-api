@@ -1,10 +1,4 @@
-var env = process.env.NODE_ENV || 'develoment';
-
-// if(env === 'develoment') {
-//     process.env.PORT = 3000;
-// } else if(env === 'test') {
-//     process.env.PORT = 3000;
-// }
+require('./config/config');
 
 const _= require('lodash');
 var {ObjectID} = require('mongodb');
@@ -17,6 +11,7 @@ var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
 
 var app = express();
+const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
@@ -102,8 +97,8 @@ app.patch('/todos/:id', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Started on port 3000');
+app.listen(port, () => {
+    console.log('Started on port', port);
 });
 
 module.exports = {app};
